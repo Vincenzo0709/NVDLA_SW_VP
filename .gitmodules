@@ -7,3 +7,6 @@
 [submodule "vp/native"]
 	path = vp/native
 	url = https://github.com/Vincenzo0709/nvdla_vp.git
+[submodule "sw/tools/buildroot"]
+	path = sw/tools/buildroot
+	url = https://github.com/VIncenzo0709/nvdla_buildroot.git
