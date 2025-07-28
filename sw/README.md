@@ -2,15 +2,19 @@
 Tested on Ubuntu 16.04.7, with 4.15.0 kernel.
 
 This directory contains all software artifacts and build targets needed by Virtual Platform.<br>
-It encapsulates [nvdla_sw](https://github.com/Vincenzo0709/nvdla_sw), forked from [nvdla/sw](https://github.com/nvdla/sw) Github repo as submodule:
-- In [kmd/](nvdla/kmd/) you can compile the NVDLA KMD (Kernel Mode Driver);
-- In [tools/](tools/) there is buildroot submodule, to compile needed linux kernel (4.13.3) and toolchain (for arm64);
-- In [umd/](nvdla/umd/) you can compile NVDLA UMD (User Mode Driver), with application and libraries to compile CNNs and launch inferences on NVDLA accelerator.
+It encapsulates two submodules:
+- [nvdla_sw](https://github.com/Vincenzo0709/nvdla_sw.git), forked from [nvdla/sw](https://github.com/nvdla/sw.git) Github repo;
+- [nvdla_buildroot](https://github.com/Vincenzo0709/nvdla_buildroot.git), forked from [nvdla/buildroot](https://github.com/nvdla/buildroot.git) Github repo.
+
+So:
+- In [nvdla/kmd/](nvdla/kmd/) you can compile the NVDLA KMD (Kernel Mode Driver);
+- In [nvdla/umd/](nvdla/umd/) you can compile NVDLA UMD (User Mode Driver), with application and libraries to compile CNNs and launch inferences on NVDLA accelerator;
+- In [tools/](tools/) there is buildroot submodule, to compile needed linux kernel (4.13.3) and toolchain (for arm64).
 
 ## Overview
 ```
 sw
-├── nvdla/
+├── nvdla/                                              # nvdla_sw submodule
 │   ├── kmd/
 │   │   ├── Documentation/
 │   │   ├── firmware/                                   # KMD source files
@@ -43,7 +47,7 @@ sw
 │   ├── README.md
 │   └── Roadmap.md
 ├── tools/
-│   ├── buildroot/                                      # buildroot submodule
+│   ├── buildroot/                                      # nvdla_buildroot submodule
 │   └── utils/
 │       └── .config                                     # buildroot configuration (to avoid menuconfig)
 ├── .gitignore
@@ -51,20 +55,21 @@ sw
 └── README.md
 ```
 
-## Installation
-Follow this [tutorial](../doc/INSTALL_STEPS.md).
-
-## Build
-To build all default targets:
+## Build instructions
+To build all default targets, from the current directory:
 ```
 make
+```
+To clean up:
+```
+make clean
 ```
 
 To build KMD:
 ```
 make kmd
 ```
-To cleanup:
+To clean up:
 ```
 make clean_kmd
 ```
@@ -77,7 +82,7 @@ To build UMD runtime:
 ```
 make runtime
 ```
-To cleanup:
+To clean up:
 ```
 make clean_umd
 ```

@@ -22,6 +22,9 @@ TOOLCHAIN_CHECK := $(TOOLCHAIN_DIR)/bin/aarch64-linux-gnu-gcc
 # Linux kernel image needed for kmd build
 KERNEL_DIR := $(BUILDROOT_DIR)/output/build/linux-4.13.3
 
+# Inference output directory
+OUTPUT_DIR := $(NVP_VP_INF_OUTPUT)
+
 # Main targets
 all: kmd umd
 
@@ -38,7 +41,7 @@ umd: compiler runtime
 runtime: $(TOOLCHAIN_CHECK)
 	export TOP=$(NVP_SW_UMD);							\
 	export TOOLCHAIN_PREFIX=$(TOOLCHAIN_PREFIX);		\
-	$(MAKE) -C $(NVP_SW_UMD) runtime
+	$(MAKE) -C $(NVP_SW_UMD) OUTPUT_DIMG="$(OUTPUT_DIR)" runtime
 
 compiler:
 	export TOP=$(NVP_SW_UMD);							\
@@ -56,7 +59,7 @@ $(BUILDROOT_DIR)/.done:
 	touch $@
 
 # Clean targets
-clean: clean_umd clean_kmd clean_buildroot
+clean: clean_umd clean_kmd
 
 clean_umd:
 	$(MAKE) -C $(NVP_SW_UMD) clean

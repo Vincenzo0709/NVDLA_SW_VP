@@ -1,36 +1,5 @@
-## Custom image generation
-DockerHub NVDLA VP container already has built needed tools.
-In order to modify container image as needed to run NVDLA VP, you need to recompile the image using the [Dockerfile](/container/Dockerfile), by indicating the new image name (e.g. "nvdla_custom").
-
-```
-cd container/
-sudo docker build -t <img_name> .
-```
-
-## Container execution
-To start the container, from the vp/ directory:
-```
-make IMG_NAME=<img_name> NET=<net_name>
-```
-
-| IMG_NAME   | NET_NAME   |
-|------------|------------|
-| nvdla/vp   | AlexNet    |
-| <custom>   | ResNet     |
-
-To verify the container is running:
-```
-sudo docker ps
-```
-
-## Virtual Platform launch
-To start the VP, from the current directory:
-```
-aarch64_toplevel -c /usr/local/nvdla/aarch64_nvdla.lua
-```
-
-## Container description
-All necessary tools to use NVDLA VP will be located in */usr/local/nvdla* directory, inside the container environment:
+# Container NVDLA overview
+All necessary tools to use NVDLA VP are located in */usr/local/nvdla* directory, inside the container environment:
 - **LICENSE**: gathers all Licenses for UMD, KMD, Apache, MIT, Google protobuf, Caffe, rapidjson, msinttypes, JSON, GNU buildroot and Linux;
 - **aarch64_nvdla.lua** and **aarch64_nvdla_dump_dts.lua**: configuration scripts needed by Qemu;
 - **drm.ko**: kernel module for Direct Rendering Image, graphics and GPU management;
@@ -49,7 +18,7 @@ All necessary tools to use NVDLA VP will be located in */usr/local/nvdla* direct
 The VP executable is located in */usr/bin*:
 - **aarch64_toplevel**
 
-Other libraries are located in */usr/local/lib*:
+Other libraries are located in */usr/lib*:
 - **libcosim_sc_wrapper.so**
 - **libnvdla.so**
 - **libqbox-nvdla.so**

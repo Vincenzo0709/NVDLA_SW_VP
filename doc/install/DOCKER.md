@@ -1,6 +1,5 @@
 # Docker installation
-Here are the steps to download NVDLA VP Docker container image and how to use it.<br>
-Tested on Ubuntu 16.04, with 4.15.0 kernel.
+Here are the steps to download Docker runtime and NVDLA VP container image.
 
 ## Docker runtime installation
 Install necessary tools for GPG keys management:

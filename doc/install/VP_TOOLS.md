@@ -1,24 +1,21 @@
 # Tools installation
-Here are the installation steps for all needed tools.<br>
-Tested on Ubuntu 16.04, with 4.15.0 kernel.
+Here are the installation steps for all needed tools.
 
 ## Generic tools
+
+To use buildroot repo you need to install the following packages:
+```
+sudo apt-get install libncurses5-dev libncursesw5-dev
+```
+
+These are for VP compiling:
 ```
 sudo apt-get update
 sudo apt-get install g++ cmake libboost-dev python-dev libglib2.0-dev libpixman-1-dev liblua5.2-dev lua5.2 swig libcap-dev libattr1-dev default-jdk flex bison
 ```
 
-If using Ubuntu higher than 14.04:
-```
-sudo apt-get install python-software-properties
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-```
-
-Then follow this [tutorial](COMPILERS.md) to install and configure compilers.
-
-> TODO: Maybe python2?
+> TODO: is python2 installation needed?
+> TODO: check for cmake version.
 
 ## SystemC library
 Download the archive from the website, and extract:

@@ -2,8 +2,8 @@
 #
 # Author: Vincenzo Merola <vincenzo.merola2@unina.it>
 # Description:
-#       This script prepares adn executes NVDLA C model build:
-#       1. Call make, and automates prompt answer with all needed;
+#       This script prepares and executes NVDLA C model build:
+#       1. Call make, and automates prompt answers with all needed tools path;
 #       2. Start the build.
 
 cd ${NVP_CMOD_NVDLA}

@@ -11,12 +11,16 @@ endif
 all: cmod
 
 # Hardware C model build
-cmod:
+cmod: $(NVP_CMOD_NVDLA)/$(NVP_CONFIG).done
+
+$(NVP_CMOD_NVDLA)/$(NVP_CONFIG).done:
 	$(NVP_CMOD_ROOT)/scripts/build.sh
+	touch $@
 
 # Clean targets
 clean:
 	rm -rf $(NVP_CMOD_NVDLA)/outdir
 	rm -f $(NVP_CMOD_NVDLA)/tree.make
+	rm -f $(NVP_CMOD_NVDLA)/*.done
 
 .PHONY: cmod clean
