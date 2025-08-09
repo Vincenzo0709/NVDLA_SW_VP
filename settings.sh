@@ -8,7 +8,7 @@
 #       3. Select VP mode.
 #
 # Usage:
-#       source settings.sh <CONFIG> <MODE>
+#       source settings.sh [CONFIG] [MODE] [NET]
 
 # Top directory
 export NVP_ROOT_DIR="$( dirname "$( realpath "${BASH_SOURCE[0]}" )" )"
@@ -37,10 +37,10 @@ CONFIG=$1
 MODE=$2
 NET=$3
 
-# NVDLA configurations:
-# - nv_full:
-# - nv_large: 
-# - nv_small: the least complex, with 64 INT8 MAC, no SRAM and no Microcontroller (headless)
+# NVDLA configurations (see documentation):
+# - nv_full;
+# - nv_large; 
+# - nv_small.
 case ${CONFIG} in
     nv_full | "")
         export NVP_CONFIG=nv_full
@@ -62,7 +62,7 @@ case ${MODE} in
         ;;
     container)
         export NVP_MODE=container
-        export NPV_VP_INF_OUTPUT=/mnt/usr/local/nvdla
+        export NPV_VP_INF_OUTPUT=/mnt/usr/local/nvdla/output.dimg
         ;;
     *)
         echo "Mode not recognized"
@@ -71,9 +71,9 @@ case ${MODE} in
 esac
 echo "Chosen mode: $NVP_MODE"
 
-# CNN alternatives:
-# - LeNet:
-# - AlexNet:
+# CNN alternatives (see documentation):
+# - LeNet;
+# - AlexNet.
 case ${NET} in
     LeNet | "")
         export NVP_NET=LeNet

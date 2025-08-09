@@ -18,9 +18,10 @@ insmod ${NVP_VP_PATH}/opendla.ko
 # Library path for nvdla_runtime
 export LD_LIBRARY_PATH=${NVP_VP_PATH}
 
-# Run inference
+# Run inference (output dimg file is generated in the current directory)
 cd ${NVP_VP_OUT}
-${NVP_VP_PATH}/nvdla_runtime \
-    --loadable ${NVP_VP_OUT}/nets/LeNet/fast-math.nvdla \
-    --image ${NVP_VP_ROOT}/nets/LeNet/images/three.pgm \
+
+${NVP_VP_PATH}/nvdla_runtime                                    \
+    --loadable ${NVP_VP_OUT}/nets/${NVP_NET}/fast-math.nvdla    \
+    --image ${NVP_VP_ROOT}/nets/${NVP_NET}/images/eight.pgm     \
     --rawdump | tee ${NVP_VP_OUT}/inference.log

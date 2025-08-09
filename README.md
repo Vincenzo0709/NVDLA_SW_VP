@@ -37,7 +37,7 @@ See [here](https://nvdla.org/hw/v2/scalability.html) for the configurable versio
 
 | NET       | Reference  | Description |
 |-----------|------------|-------------|
-| LeNet     | [prototxt](https://github.com/timotiusnc/mnist/blob/master/lenet.prototxt) - [caffemodel](https://github.com/timotiusnc/mnist/blob/master/lenet.caffemodel) | Returns a 10 classes tuple (digit images) | 
+| LeNet     | [prototxt](https://github.com/timotiusnc/mnist/blob/master/lenet.prototxt) - [caffemodel](https://github.com/timotiusnc/mnist/blob/master/lenet.caffemodel) | Returns a 10 classes tuple (digit image recognition) | 
 | AlexNet   | [prototxt](https://github.com/BVLC/caffe/blob/master/models/bvlc_alexnet/deploy.prototxt) - [caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_alexnet.caffemodel) | Returns a 1000 classes tuple (image recognition) |
 
 Then, to build all default targets (C model, software and Virtual Platform):

@@ -29,11 +29,11 @@ cp ${NVP_SW_TOOLS}/buildroot/output/images/Image ${NVP_VP_PATH}/images/linux-4.1
 cp ${NVP_SW_TOOLS}/buildroot/output/images/rootfs.ext4 ${NVP_VP_PATH}/images/linux-4.13.3
 cp ${NVP_SW_TOOLS}/buildroot/output/build/linux-4.13.3/drivers/gpu/drm/drm.ko ${NVP_VP_PATH}
 
-# Copy runtime, compiler and kernel module
-cp ${NVP_SW_NVDLA}/umd/out/apps/compiler/nvdla_compiler/nvdla_compiler ${NVP_VP_PATH}
+# Copy runtime
 cp ${NVP_SW_NVDLA}/umd/out/apps/runtime/nvdla_runtime/nvdla_runtime ${NVP_VP_PATH}
-cp ${NVP_SW_NVDLA}/umd/out/core/src/compiler/libnvdla_compiler/libnvdla_compiler.so ${NVP_VP_PATH}
 cp ${NVP_SW_NVDLA}/umd/out/core/src/runtime/libnvdla_runtime/libnvdla_runtime.so ${NVP_VP_PATH}
+
+# Copy kernel module
 cp ${NVP_SW_NVDLA}/kmd/port/linux/opendla.ko ${NVP_VP_PATH}
 
 # Modify LUA configuration file, needed by QEMU, substituting with absolute paths:

@@ -10,3 +10,6 @@ export NVP_VP_NATIVE=${NVP_VP_ROOT}/native
 export NVP_VP_NETS=${NVP_VP_ROOT}/nets
 export NVP_VP_OUT=${NVP_VP_ROOT}/output
 export NVP_VP_PATH=${NVP_VP_OUT}/nvdla
+
+# Retrieve the NET
+export NVP_NET=$(cat ${NVP_VP_OUT}/nets/net.config)
