@@ -26,6 +26,7 @@ To test if the Virtual Platform was built correctly you can launch a simple "Hel
 ## Inference
 To run an inference with the chosen configuration and net:
 ```
+source ./scripts/environment.sh
 sh ./scripts/run_inference.sh
 ```
 

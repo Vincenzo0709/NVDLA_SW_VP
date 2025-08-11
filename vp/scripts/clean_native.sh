@@ -14,7 +14,7 @@ rm -f .done
 # Clean VP artifacts
 rm -rf ${NVP_VP_PATH}
 rm -f ${NVP_VP_OUT}/output.dimg
-rm -f ${NVP_VP_OUT}/inference.log
+rm -f ${NVP_VP_OUT}/${NVP_CONFIG}-${NVP_PROFILE}.log
 
 if [ -z "$(find "${NVP_VP_OUT}" -mindepth 1 -print -quit)" ]; then
     rm -rf ${NVP_VP_OUT}

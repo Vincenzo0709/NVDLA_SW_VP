@@ -34,13 +34,14 @@ cd ${OUTPUT_DIR}
 ${NVP_VP_ROOT}/compiler/nvdla_compiler                          \
     --prototxt ${PROTOTXT}                                      \
     --caffemodel ${CAFFEMODEL}                                  \
-    --profile fast-math                                         \
+    --profile ${NVP_PROFILE}                                    \
     -o .                                                        \
     --configtarget ${NVP_CONFIG}                                \
-    --informat ${FORMAT} | tee ${NVP_VP_OUT}/net_compile.log
+    --informat ${FORMAT} | tee ${NVP_VP_OUT}/${NVP_CONFIG}-${NVP_PROFILE}.log
 
 # Remove futile outputs
 rm -rf ${OUTPUT_DIR}/.wisdom.dir
 
-# To pass NVP_NET environment variable inside the Virtual Platform environment, we use a file
+# To pass NVP_NET and NVP_PROFILE environment variables inside the Virtual Platform environment, we use a file
 echo ${NVP_NET} > ${NVP_VP_OUT}/nets/net.config
+echo ${NVP_PROFILE} > ${NVP_VP_OUT}/nets/profile.config

@@ -13,3 +13,4 @@ export NVP_VP_PATH=${NVP_VP_OUT}/nvdla
 
 # Retrieve the NET
 export NVP_NET=$(cat ${NVP_VP_OUT}/nets/net.config)
+export NVP_PROFILE=$(cat ${NVP_VP_OUT}/nets/profile.config)
