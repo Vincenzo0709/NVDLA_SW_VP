@@ -84,6 +84,10 @@ To clean up:
 ```
 make clean_vp
 ```
+Or you can clean nets only:
+```
+make clean_nets
+```
 
 To run an inference:
 ```

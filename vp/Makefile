@@ -44,7 +44,7 @@ run: $(NVP_MODE)
 
 # Clean targets
 clean:
-	$(NVP_VP_ROOT)/scripts/clean_$(NVP_MODE).sh
+	$(NVP_VP_ROOT)/scripts/clean.sh
 
 clean_nets:
 	rm -rf $(NVP_VP_OUT)/nets

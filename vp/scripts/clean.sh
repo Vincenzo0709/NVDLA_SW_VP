@@ -2,7 +2,7 @@
 #
 # Author: Vincenzo Merola <vincenzo.merola2@unina.it>
 # Description:
-#       This script cleans all Virtual Platform native output artifacts.
+#       This script cleans all Virtual Platform output artifacts.
 
 # Clean cmake outputs
 cd ${NVP_VP_NATIVE}
@@ -12,10 +12,4 @@ rm -rf build/ CMakeFiles/ fpga/aws-fpga/*.build
 rm -f .done
 
 # Clean VP artifacts
-rm -rf ${NVP_VP_PATH}
-rm -f ${NVP_VP_OUT}/output.dimg
-rm -f ${NVP_VP_OUT}/${NVP_CONFIG}-${NVP_PROFILE}.log
-
-if [ -z "$(find "${NVP_VP_OUT}" -mindepth 1 -print -quit)" ]; then
-    rm -rf ${NVP_VP_OUT}
-fi
+sudo rm -rf ${NVP_VP_OUT}

@@ -81,7 +81,7 @@ case ${CONFIG} in
 esac
 
 
-## Profile alternatives:
+# Profile alternatives:
 # - basic;
 # - default;
 # - performance;

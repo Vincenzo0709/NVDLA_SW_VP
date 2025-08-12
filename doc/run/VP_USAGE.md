@@ -15,7 +15,7 @@ mount -t 9p -o trans=virtio r /mnt
 cd /mnt
 source ./scripts/environment.sh
 ```
-because of QEMU configuration file, now in */mnt* you can see the *NVDLA_SW_VP/vp* directory, with all tools and nets.
+because of QEMU configuration file, now in */mnt* you can see the *NVDLA_SW_VP/vp* directory, with all tools and compiled nets.
 
 ## Virtual platform test
 To test if the Virtual Platform was built correctly you can launch a simple "Hello world!" test:
@@ -26,7 +26,6 @@ To test if the Virtual Platform was built correctly you can launch a simple "Hel
 ## Inference
 To run an inference with the chosen configuration and net:
 ```
-source ./scripts/environment.sh
 sh ./scripts/run_inference.sh
 ```
 

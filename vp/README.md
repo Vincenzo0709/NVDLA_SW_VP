@@ -6,6 +6,7 @@ This directory contains all targets needed to build NVDLA Virtual Platform, in t
 - Container mode: it isolates and groups all preconfigured tools in a Docker container.
 
 It encapsulates [nvdla_vp](https://github.com/Vincenzo0709/nvdla_vp), forked from [nvdla/vp](https://github.com/nvdla/vp) Github repo, as submodule.
+- In [compiler/](compiler/) there is net compiler executable and library; for now it is needed to compile correctly.
 - In [container/](container/) there is all needed to build in container mode;
 - In [native/](native/) there is all needed to build in native mode;
 - In [nets/](nets/) there are some example CNNs;
@@ -14,6 +15,10 @@ It encapsulates [nvdla_vp](https://github.com/Vincenzo0709/nvdla_vp), forked fro
 # Overview
 ```
 vp
+├── compiler/
+│   ├── libnvdla_compiler.so
+│   ├── nvdla_compiler
+│   └── README.md
 ├── container/
 │   ├── Dockerfile                                      # Custom container image Dockerfile
 │   ├── README.md
@@ -56,6 +61,10 @@ make
 To clean up:
 ```
 make clean
+```
+Or you can clean nets only:
+```
+make clean_nets
 ```
 
 Then:
