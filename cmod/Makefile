@@ -14,6 +14,7 @@ all: cmod
 cmod: $(NVP_CMOD_NVDLA)/$(NVP_CONFIG).done
 
 $(NVP_CMOD_NVDLA)/$(NVP_CONFIG).done:
+	$(NVP_CMOD_ROOT)/scripts/checkout.sh
 	$(NVP_CMOD_ROOT)/scripts/build.sh
 	touch $@
 

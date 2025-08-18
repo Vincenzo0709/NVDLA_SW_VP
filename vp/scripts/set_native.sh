@@ -6,6 +6,8 @@
 #       1. Prepare the VP execution environment;
 #       2. Correct some QEMU configuration parameters.
 
+set -e
+
 # Copy all outputs in the same directories
 mkdir -p ${NVP_VP_PATH}/lib
 mkdir -p ${NVP_VP_PATH}/images/linux-4.13.3

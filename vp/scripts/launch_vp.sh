@@ -4,6 +4,8 @@
 # Description:
 #       This script launches the Virtual Platform.
 
+set -e
+
 # Disable SC_SIGNAL_WRITE_CHECK, macro used in SystemC to decide upon checking multiple writes
 # on sc_signal objects or not. Because NVDLA VP uses TLM to model module communication, not RTL signal wiring,
 # multiple writes in the same delta cycle could happen but should not cause errors.

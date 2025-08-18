@@ -21,7 +21,7 @@ export LD_LIBRARY_PATH=${NVP_VP_PATH}
 # Run inference (output dimg file is generated in the current directory)
 cd ${NVP_VP_OUT}
 
-${NVP_VP_PATH}/nvdla_runtime                                    \
-    --loadable ${NVP_VP_OUT}/nets/${NVP_NET}/${NVP_PROFILE}.nvdla    \
-    --image ${NVP_VP_ROOT}/nets/${NVP_NET}/images/eight.pgm     \
+${NVP_VP_PATH}/nvdla_runtime                                        \
+    --loadable ${NVP_VP_OUT}/nets/${NVP_NET}/${NVP_PROFILE}.nvdla   \
+    --image ${NVP_VP_ROOT}/nets/${NVP_NET}/images/eight.pgm         \
     --rawdump | tee ${NVP_VP_OUT}/inference.log

@@ -43,7 +43,7 @@ run: $(NVP_MODE)
 	fi
 
 # Clean targets
-clean:
+clean: clean_nets
 	$(NVP_VP_ROOT)/scripts/clean.sh
 
 clean_nets:

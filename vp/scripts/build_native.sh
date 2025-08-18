@@ -12,6 +12,8 @@
 #       2. Compile
 #       3. Install
 
+set -e
+
 cd ${NVP_VP_NATIVE}
 
 # Prepare cmake needed parameters:

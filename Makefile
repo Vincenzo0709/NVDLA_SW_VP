@@ -26,6 +26,10 @@ cmod:
 run: vp
 	$(MAKE) -C $(NVP_VP_ROOT) run
 
+# Net compile
+net:
+	$(MAKE) -C $(NVP_VP_ROOT) net
+
 # Clean targets
 clean: clean_cmod clean_sw clean_vp clean_nets
 
@@ -44,4 +48,4 @@ clean_nets:
 clean_buildroot:
 	$(MAKE) _C $(NVP_SW_TOOLS) clean_buildroot
 
-.PHONY: sw vp cmod clean clean_sw clean_vp clean_cmod clean_nets clean_buildroot
+.PHONY: sw vp cmod net clean clean_sw clean_vp clean_cmod clean_nets clean_buildroot

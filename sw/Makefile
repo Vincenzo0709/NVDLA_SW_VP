@@ -30,6 +30,7 @@ all: kmd umd
 
 # KMD compilation
 kmd: $(KERNEL_DIR) $(TOOLCHAIN_CHECK)
+	$(NVP_SW_TOOLS)/utils/dla_interface.sh
 	export KDIR=$<;										\
 	export ARCH=arm64;									\
 	export CROSS_COMPILE=$(TOOLCHAIN_PREFIX);			\

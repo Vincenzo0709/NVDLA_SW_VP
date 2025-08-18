@@ -4,6 +4,8 @@
 # Description:
 #       This script cleans all Virtual Platform output artifacts.
 
+set -e
+
 # Clean cmake outputs
 cd ${NVP_VP_NATIVE}
 rm -f aarch64_toplevel CMakeCache.txt cmake_install.cmake CPackConfig.cmake
